@@ -1,0 +1,133 @@
+.underline-from-center {
+  position: relative;
+}
+
+.underline-from-center::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.underline-from-center:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* style.css */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #202225; /* couleur de fond du rail de défilement */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3f4043; /* couleur du curseur de défilement */
+  border-radius: 4px; /* arrondi des coins du curseur de défilement */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #1f1f23; /* couleur du curseur de défilement au survol */
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background-color: #3182ce;
+  transition: right 0.4s;
+  padding-top: 4rem;
+}
+
+.dao-menu {
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+
+.sidebar .ml-16 {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .sidebar .ml-16 {
+    margin-left: 4rem;
+    margin-top: 0;
+  }
+
+  .sidebar .ml-16 .underline-from-center {
+    display: inline-block;
+    align-self: center;
+  }
+
+  .close-icon {
+    display: none;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .nav-menu .mt-4 {
+    margin-top: 1rem;
+  }
+}
+
+
+
