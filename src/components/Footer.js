@@ -101,12 +101,12 @@ const Footer = () => {
           <h3 className="text-xl mb-3 font-bold">Entreprise</h3>
           <ul>
             <li>
-              <a href="/about" className="block mb-2">
+              <a href="/docs" className="block mb-2">
               {t("about")}
               </a>
             </li>
             <li>
-              <a href="/help" className="block">
+              <a href="/docs" className="block">
               {t("help")}
               </a>
             </li>

@@ -44,7 +44,7 @@ const Sidebar = ({ page }) => {
         >
           {title}
           <motion.div
-            animate={{ opacity: isOpen ? 1 : 0 }}
+            animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ duration: 0.4 }}
             className="text-gray-400"
           >
@@ -54,7 +54,9 @@ const Sidebar = ({ page }) => {
         {isOpen && (
           <motion.div
             className={nested ? "ml-4" : "ml-2"}
-            transition={{ duration: 0.4 }}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: isOpen ? 1 : 0 }}
+            transition={{ duration: 0.1 }}
           >
             {links.map((link, index) =>
               link.links ? (
@@ -67,8 +69,8 @@ const Sidebar = ({ page }) => {
               ) : (
                 <motion.div
                   key={index}
-                  initial={{ scale: 0.5 }}
-                  animate={{ scale: isOpen ? 1 : 0.5 }}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: isOpen ? 1 : 0 }}
                   transition={{ delay: 0.01, duration: 0.1 }}
                 >
                   <Link
