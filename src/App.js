@@ -20,6 +20,7 @@ import DocInviteLinkPage from "./pages/docs/server-management/docs-invite-link";
 import DocIntroPage from "./pages/docs/server-management/dao-mode/docs-intro";
 import DocRPDAOPage from "./pages/docs/server-management/dao-mode/docs-roles-permissions-dao";
 import DocProposalsPage from "./pages/docs/server-management/dao-mode/docs-proposals";
+import DocConclusionPage from "./pages/docs/docs-conclusion";
 
 function App() {
   return (
@@ -88,6 +89,10 @@ function App() {
       <Route
         path="/docs/proposals"
         element={<DocProposalsPage />}
+      />
+      <Route
+        path="/docs/conclusion"
+        element={<DocConclusionPage />}
       />
     </Routes>
     

@@ -24,7 +24,7 @@ const DocAccountCreationPage = () => {
             Please note that signing a message in this way incurs no transaction
             fees.
           </p>
-          <p>You don't need to use any e-mail addresses or passwords</p>
+          <p className="border-b border-zinc-200 pb-20">You don't need to use any e-mail addresses or passwords</p>
           <div className="flex justify-end items-center mt-4">
             <Link
               to="/docs/logging-in"

@@ -16,7 +16,7 @@ const DocSignWithWalletPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Sign with wallet
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             OnCom integrates smoothly with Web3 by allowing you to sign up and
             sign in with your wallet. Signing a message with your wallet creates
             a unique and secure identifier for your account, eliminating the

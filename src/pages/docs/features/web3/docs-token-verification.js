@@ -16,7 +16,7 @@ const DocTokenVerificationPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Token verification
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             You can verify the possession of ERC721 or ERC20 tokens on OnCom.
             Navigate to the 'Token Verification' page and enter your token
             contract address and token ID. OnCom will then verify the ownership

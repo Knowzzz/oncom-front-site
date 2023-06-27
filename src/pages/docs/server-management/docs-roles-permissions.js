@@ -16,7 +16,7 @@ const DocRolesPermissionsPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Roles & Permissions
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             Roles and permissions are fundamental aspects of server management
             on OnCom. They allow you to determine the capabilities of your
             community members, providing a way to differentiate between user

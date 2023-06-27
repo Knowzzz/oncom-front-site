@@ -16,7 +16,7 @@ const DocCreatingServerPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Creating server
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             Creating a server on OnCom is simple and free. Click the '+' button
             on the left navigation bar, select 'Create a Server', and enter the
             required details. After creating your server, you can personalize it

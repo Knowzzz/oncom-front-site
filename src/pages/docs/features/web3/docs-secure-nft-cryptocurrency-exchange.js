@@ -16,7 +16,7 @@ const DocNFTExchangePage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Secure NFT & Cryptocurrency Exchange
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             Exchanging NFTs and cryptocurrencies securely is a breeze on OnCom.
             Simply go to the 'Marketplace' tab, select the NFT or cryptocurrency
             you wish to trade, enter the details of the transaction, and click

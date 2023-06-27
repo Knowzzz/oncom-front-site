@@ -44,7 +44,7 @@ const Sidebar = ({ page }) => {
         >
           {title}
           <motion.div
-            animate={{ rotate: isOpen ? 90 : 0 }}
+            animate={{ opacity: isOpen ? 1 : 0 }}
             transition={{ duration: 0.4 }}
             className="text-gray-400"
           >
@@ -54,8 +54,6 @@ const Sidebar = ({ page }) => {
         {isOpen && (
           <motion.div
             className={nested ? "ml-4" : "ml-2"}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: isOpen ? 1 : 0 }}
             transition={{ duration: 0.4 }}
           >
             {links.map((link, index) =>
@@ -69,9 +67,9 @@ const Sidebar = ({ page }) => {
               ) : (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: isOpen ? 1 : 0 }}
-                  transition={{ delay: 0.1, duration: 0.3 }}
+                  initial={{ scale: 0.5 }}
+                  animate={{ scale: isOpen ? 1 : 0.5 }}
+                  transition={{ delay: 0.01, duration: 0.1 }}
                 >
                   <Link
                     to={link.path}
@@ -186,13 +184,13 @@ const Sidebar = ({ page }) => {
           ]}
         />
         <Link
-          to="/conclusion"
+          to="/docs/conclusion"
           className={`text-sm font-normal ${
-            "/conclusion" === activeLink
+            "/docs/conclusion" === activeLink
               ? "text-blue-700 bg-blue-100"
               : "text-gray-600 hover:text-black hover:bg-gray-100"
           } focus:outline-none py-2 px-2 rounded`}
-          onClick={() => setActiveLink("/conclusion")}
+          onClick={() => setActiveLink("/docs/conclusion")}
         >
           Conclusion
         </Link>

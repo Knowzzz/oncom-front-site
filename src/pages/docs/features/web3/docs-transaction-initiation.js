@@ -16,7 +16,7 @@ const DocTransactionInitiationPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Transaction Initiation
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             OnCom supports cryptocurrency transactions within its platform. To
             initiate a transaction, navigate to the 'Wallet' tab in the
             navigation bar, enter the recipient's wallet address and the amount

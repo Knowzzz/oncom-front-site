@@ -21,7 +21,7 @@ const DocTagsPage = () => {
             'Manage Tags'. To add a tag, simply type in the tag and hit 'Enter'.
             Other users can now find you by searching for these tags.
           </p>
-          <p>
+          <p className="border-b border-zinc-200 pb-20">
           To further
             enhance credibility, you can get your tags certified by OnCom staff,
             which can validate your claimed skills.

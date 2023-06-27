@@ -14,7 +14,7 @@ const DocInviteLinkPage = () => {
         <div className="flex flex-col max-w-4xl mx-auto p-4 ml-10">
           <h3 className="text-1xl mb-5">Server Management</h3>
           <h1 className="text-4xl font-bold mb-5 text-black">Invite Link</h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             When you're on a server, and have the permissions to do so, you can
             generate an invitation link valid for a certain period of time, and
             send it to anyone. All they have to do is click on the link, and if

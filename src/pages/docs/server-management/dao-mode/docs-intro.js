@@ -27,7 +27,7 @@ const DocIntroPage = () => {
             questions. These mechanisms operate in a decentralized manner,
             ensuring democratic decision-making within your DAO.
           </p>
-          <p>
+          <p className="border-b border-zinc-200 pb-20">
             Please note that OnCom staff members do not hold any rights over
             each DAO's smart contract. This ensures the autonomous operation of
             your DAOs.

@@ -20,7 +20,7 @@ const DocLoggingInPage = () => {
             during account creation. This will authenticate your identity and
             grant you access to your OnCom account.
           </p>
-          <p>You don't need to use any e-mail addresses or passwords</p>
+          <p className="border-b border-zinc-200 pb-20">You don't need to use any e-mail addresses or passwords</p>
           <div className="flex justify-end items-center mt-4">
             <Link
               to="/docs/friends-private-messaging"

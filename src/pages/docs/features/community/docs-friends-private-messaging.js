@@ -16,7 +16,7 @@ const DocFriendsPrivateMessagingPage = () => {
           <h1 className="text-4xl font-bold mb-5 text-black">
             Friends & Private Messaging
           </h1>
-          <p className="text-md mb-10">
+          <p className="text-md mb-10 border-b border-zinc-200 pb-20">
             After logging in, you can start adding friends by clicking on the
             'Add Friend' button located on your profile page. Once the other
             user accepts your friend request, you will be able to send them
