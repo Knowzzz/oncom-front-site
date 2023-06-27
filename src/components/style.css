@@ -58,9 +58,10 @@
   right: -100%;
   width: 75%;
   height: 100%;
-  background-color: #3182ce;
+  background-color: #3f3f46;
   transition: right 0.4s;
   padding-top: 4rem;
+  color: #a1a1aa;
 }
 
 .dao-menu {
@@ -105,6 +106,7 @@
     width: auto;
     height: auto;
     padding-top: 0;
+    color: #a1a1aa;
   }
 
   .sidebar .ml-16 {
