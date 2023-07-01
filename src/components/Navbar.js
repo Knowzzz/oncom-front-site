@@ -29,7 +29,7 @@ const Navbar = ({ isAuthenticated, color }) => {
           <img
             src={logo}
             alt="Logo"
-            className="h-16 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
         <div

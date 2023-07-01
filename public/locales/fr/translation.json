@@ -20,6 +20,9 @@
   "produces": "Produits",
   "download": "Télécharger",
   "signup": "Inscription",
+  "not_found": "Page non trouvée",
+  "page_not_found": "La page que vous recherchez est introuvable.",
+  "back_home": "Retour à la page d'accueil",
 
   "already_account": "Vous avez déjà un compte ?",
   "signin": "Se connecter",

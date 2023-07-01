@@ -39,8 +39,13 @@ const Footer = () => {
       ),
     },
   ];
-
-  const [selectedOption, setSelectedOption] = useState(languageOptions[0]);
+  
+  // Trouver l'option qui correspond à la langue actuelle
+  const currentOption = languageOptions.find(option => option.value === i18n.language);
+  
+  // Utiliser cette option pour initialiser l'état
+  const [selectedOption, setSelectedOption] = useState(currentOption);  
+  
 
   const handleLanguageChange = (option) => {
     setSelectedOption(option);

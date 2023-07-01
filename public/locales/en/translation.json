@@ -20,6 +20,9 @@
   "produces": "Produces",
   "download": "Download",
   "signup": "Signup",
+  "not_found": "Page not found",
+  "page_not_found": "The page you are looking for cannot be found.",
+  "back_home": "Back to home page",
 
   "already_account": "Already have an account?",
   "signin": "Sign in"

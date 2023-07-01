@@ -39,9 +39,7 @@ async function checkIfIsAuthenticated() {
 }
 
 function Home() {
-  const navigate = useNavigate();
   const { t } = useTranslation();
-  const location = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
