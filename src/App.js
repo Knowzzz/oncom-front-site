@@ -21,6 +21,7 @@ import DocIntroPage from "./pages/docs/server-management/dao-mode/docs-intro";
 import DocRPDAOPage from "./pages/docs/server-management/dao-mode/docs-roles-permissions-dao";
 import DocProposalsPage from "./pages/docs/server-management/dao-mode/docs-proposals";
 import DocConclusionPage from "./pages/docs/docs-conclusion";
+import NewsletterPage from "./pages/signup";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         path="/docs/account-creation"
         element={<DocAccountCreationPage />}
       />
+      <Route path="/signup" element={<NewsletterPage />}/>
       <Route path="/docs/logging-in" element={<DocLoggingInPage />} />
       <Route
         path="/docs/friends-private-messaging"

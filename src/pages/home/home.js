@@ -3,13 +3,58 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "aos/dist/aos.css";
 import axios from "axios";
+import { API_NEWSLETTER_URL } from "../../components/const/const";
 import AOS from "aos";
+import Modal from "react-modal";
+import classNames from "classnames";
 import Typewriter from "typewriter-effect";
+import { ToastContainer, toast } from "react-toastify";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import styled from "styled-components";
+
+const Input = styled.input`
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  outline: none;
+  font-size: 16px;
+`;
 
 const baseURL = "http://localhost:8080";
+
+const NewsletterForm = ({ onSubscribe }) => {
+  const [email, setEmail] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubscribe(email);
+    setEmail("");
+  };
+
+  return (
+    <div>
+      <h2>Subscribe to our newsletter</h2>
+      <form onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          required
+          placeholder="Enter your email"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  );
+};
 
 async function checkIfIsAuthenticated() {
   try {
@@ -41,6 +86,7 @@ async function checkIfIsAuthenticated() {
 function Home() {
   const { t } = useTranslation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const checkAuthentication = async () => {
@@ -55,22 +101,53 @@ function Home() {
     });
   }, [isAuthenticated]);
 
+  const handleSubscribe = async (email) => {
+    try {
+      const response = await axios.post(`${API_NEWSLETTER_URL}/user/signup`, {
+        email,
+      });
+      if (response.data.success) {
+        toast.success("You've signed up for the newsletter successfully!");
+      } else {
+        throw new Error(
+          response.data.message || "Unable to sign up for the newsletter."
+        );
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  useEffect(() => {
+    const toastId = toast.info(<NewsletterForm onSubscribe={handleSubscribe} />, {
+      position: "bottom-right",
+      autoClose: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+    return () => {
+      toast.dismiss(toastId);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-800 text-white w-full">
       <div className="relative w-full bg-zinc-900 rounded-b-3xl lg:rounded-b-5xl overflow-hidden">
         <Navbar isAuthenticated={isAuthenticated} />
-        <div className="flex flex-col md:flex-row items-center px-4 md:p-8">
+        <div className="flex flex-col md:flex-row items-center px-4 md:p-8 mt-8 sm:mt-12 md:mt-0">
           <div className="w-full md:w-1/2 flex flex-col justify-center items-start md:items-center md:mr-8">
             <div className="text-center md:text-left mx-auto md:mx-0 max-w-lg">
-              <h1 className="leading-none text-2xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-white">
-              <Typewriter
-                
-                options={{
-                  strings: `${t("empowering_daos")}`,
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+              <h1 className="leading-none text-2xl sm:text-3xl sm:mt-4 md:text-5xl font-bold mb-2 sm:mb-4 text-white">
+                <Typewriter
+                  options={{
+                    strings: `${t("empowering_daos")}`,
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
               </h1>
               <p
                 className="text-zinc-300 text-base sm:text-lg md:text-2xl"
@@ -89,20 +166,18 @@ function Home() {
             </div>
           </div>
           <img
-            className="image-container w-32 sm:w-48 md:w-96 h-auto mx-auto md:mx-0 md:ml-8 mt-4 sm:mt-6 md:mt-18"
+            className="w-32 md:w-64 lg:w-96 h-auto mx-auto md:mx-0 md:ml-8 mt-4 sm:mt-6"
             src="/images/dao_reu.png"
             alt="Image descriptive"
           />
         </div>
-        <div className="-mt-28">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
-            <path
-              fill="#27272A"
-              fillOpacity="1"
-              d="M0,64L60,90.7C120,117,240,171,360,176C480,181,600,139,720,128C840,117,960,139,1080,149.3C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+          <path
+            fill="#27272A"
+            fillOpacity="1"
+            d="M0,64L60,90.7C120,117,240,171,360,176C480,181,600,139,720,128C840,117,960,139,1080,149.3C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          ></path>
+        </svg>
       </div>
 
       <div
@@ -135,7 +210,7 @@ function Home() {
           </p>
         </div>
         <img
-          className="w-full md:w-2/6 lg:w-1.5/3 mr-20"
+          className="w-full md:w-2/6 lg:w-1/3 mr-20"
           src="/images/screen_oncom2.png"
           alt="Image"
         />
@@ -173,7 +248,7 @@ function Home() {
                 />
               </a>
             </div>
-            
+
             <div className="ml-8">
               <h3 className="text-lg font-bold">SkymoZ</h3>
               <p className="text-gray-500">Founder & Designer</p>
@@ -189,7 +264,7 @@ function Home() {
                 />
               </a>
             </div>
-            
+
             <div className="ml-8">
               <h3 className="text-lg font-bold">NeYkoz</h3>
               <p className="text-gray-500">Founder & Designer</p>
@@ -221,6 +296,8 @@ function Home() {
       </div>
 
       <Footer />
+
+      <ToastContainer closeOnClick={false} />
     </div>
   );
 }
