@@ -240,25 +240,23 @@ function Home() {
           </div>
           <div className="flex items-center m-4">
             <div className="w-32 h-32 border-2 border-white rounded-full overflow-hidden">
-              <a href="https://twitter.com/LiBledar" target="_blank">
                 <img
-                  src="/images/primate.jpg"
+                  src="/images/pdp_skymoz.png"
                   alt="Profile picture"
                   className="w-full h-full object-cover"
                 />
-              </a>
             </div>
 
             <div className="ml-8">
-              <h3 className="text-lg font-bold">SkymoZ</h3>
+              <h3 className="text-lg font-bold">Skymoz</h3>
               <p className="text-gray-500">Founder & Designer</p>
             </div>
           </div>
           <div className="flex items-center m-4">
             <div className="w-32 h-32 border-2 border-white rounded-full overflow-hidden">
-              <a href="https://twitter.com/LiBledar" target="_blank">
+              <a href="https://twitter.com/Guillaume_Ars" target="_blank">
                 <img
-                  src="/images/primate.jpg"
+                  src="/images/primate.png"
                   alt="Founder & Designer"
                   className="w-full h-full object-cover"
                 />
